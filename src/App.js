@@ -9,8 +9,13 @@ import { useState } from "react";
 function App() {
   const [mode, setMode] = useState("light");
   const toggleMode = () => {
-    if (mode === "light") setMode("dark");
-    else setMode("light");
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#004080";
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "#e6f2ff";
+    }
   };
   return (
     <>
@@ -25,6 +30,7 @@ function App() {
           submit="Convert To UpperCase"
           submit2="Convert To LowerCase"
           submit3="Convert To Original String"
+          mode={mode}
         />
       </div>
     </>

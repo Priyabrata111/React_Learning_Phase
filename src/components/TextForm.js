@@ -27,6 +27,9 @@ export default function TextForm(props) {
       <div className="mb-2">
         <textarea
           className="form-control"
+          style={{
+            backgroundColor: props.mode === "dark" ? "#0063cc" : "#cce5ff",
+          }}
           id="myBox"
           rows="8"
           onChange={textChanged}
