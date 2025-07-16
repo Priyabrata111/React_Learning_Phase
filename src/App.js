@@ -14,7 +14,7 @@ function App() {
       document.body.style.backgroundColor = "#004080";
     } else {
       setMode("light");
-      document.body.style.backgroundColor = "#e6f2ff";
+      document.body.style.backgroundColor = "white";
     }
   };
   return (

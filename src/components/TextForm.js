@@ -23,10 +23,14 @@ export default function TextForm(props) {
   const [originalText, setOrgText] = useState("");
   return (
     <>
-      <h2>{props.heading}</h2>
+      <h2 className={`text-${props.mode === "dark" ? "light" : "dark"}`}>
+        {props.heading}
+      </h2>
       <div className="mb-2">
         <textarea
-          className="form-control"
+          className={`form-control  text-${
+            props.mode === "dark" ? "light" : "dark"
+          }`}
           style={{
             backgroundColor: props.mode === "dark" ? "#0063cc" : "#cce5ff",
           }}
