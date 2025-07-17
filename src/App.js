@@ -5,6 +5,7 @@ import TextForm from "./components/TextForm";
 import TextSubmit from "./components/ThemeToggle";
 import ThemeToggle from "./components/ThemeToggle";
 import { useState } from "react";
+import Alert from "./components/Alret";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -24,6 +25,7 @@ function App() {
         mode={mode}
         toggleMode={toggleMode}
       ></Navbar>
+      <Alert alert="Huehuehue" />
       <div id="textFormArea">
         <TextForm
           heading="Enter The Text Here"
