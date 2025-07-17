@@ -9,13 +9,27 @@ import Alert from "./components/Alret";
 
 function App() {
   const [mode, setMode] = useState("light");
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    });
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  };
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#004080";
+      showAlert("Dark Mode Enabled", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
+      showAlert("Light Mode Enabled", "success");
     }
   };
   return (
@@ -25,7 +39,7 @@ function App() {
         mode={mode}
         toggleMode={toggleMode}
       ></Navbar>
-      <Alert alert="Huehuehue" />
+      <Alert alert={alert} />
       <div id="textFormArea">
         <TextForm
           heading="Enter The Text Here"
@@ -33,6 +47,7 @@ function App() {
           submit2="Convert To LowerCase"
           submit3="Convert To Original String"
           mode={mode}
+          showAlert={showAlert}
         />
       </div>
     </>

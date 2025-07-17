@@ -6,15 +6,18 @@ export default function TextForm(props) {
     let convertText = text.toUpperCase();
     setText(convertText);
     //console.log(originalText);
+    props.showAlert("Converted to Upper case !", "success");
   };
   const buttonClicked2 = () => {
     if (originalText.length !== text.length) setOrgText(text);
 
     let convertText = text.toLowerCase();
     setText(convertText);
+    props.showAlert("Converted to Lower case !", "success");
   };
   const buttonClicked3 = () => {
     setText(originalText);
+    props.showAlert("Converted to Original String !", "success");
   };
   const textChanged = (event) => {
     setText(event.target.value);
