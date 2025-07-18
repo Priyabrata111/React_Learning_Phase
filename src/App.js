@@ -26,10 +26,16 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#004080";
       showAlert("Dark Mode Enabled", "success");
+      setInterval(() => {
+        document.title = "TextUtilities - Dark Mode";
+      }, 3000);
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light Mode Enabled", "success");
+      setInterval(() => {
+        document.title = "TextUtilities - Light Mode";
+      }, 1500);
     }
   };
   return (
