@@ -2,10 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import TextSubmit from "./components/ThemeToggle";
-import ThemeToggle from "./components/ThemeToggle";
+import TextSubmit from "./components/About";
+import About from "./components/About";
 import { useState } from "react";
-import Alert from "./components/Alret";
+import Alert from "./components/Alert";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -55,6 +57,7 @@ function App() {
           mode={mode}
           showAlert={showAlert}
         />
+        <About />
       </div>
     </>
   );
