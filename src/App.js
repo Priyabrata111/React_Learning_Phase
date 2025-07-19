@@ -42,15 +42,15 @@ function App() {
   };
   return (
     <>
-      <Navbar
-        title="TextUtilities"
-        mode={mode}
-        toggleMode={toggleMode}
-      ></Navbar>
-      <Alert alert={alert} />
+      <Router>
+        <Navbar
+          title="TextUtilities"
+          mode={mode}
+          toggleMode={toggleMode}
+        ></Navbar>
+        <Alert alert={alert} />
 
-      <div id="textFormArea">
-        <Router>
+        <div id="textFormArea">
           <Routes>
             <Route path="/about" element={<About />} />
 
@@ -68,8 +68,8 @@ function App() {
               }
             />
           </Routes>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </>
   );
 }
