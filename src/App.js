@@ -7,7 +7,7 @@ import About from "./components/About";
 import { useState } from "react";
 import Alert from "./components/Alert";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -48,16 +48,27 @@ function App() {
         toggleMode={toggleMode}
       ></Navbar>
       <Alert alert={alert} />
+
       <div id="textFormArea">
-        <TextForm
-          heading="Enter The Text Here"
-          submit="Convert To UpperCase"
-          submit2="Convert To LowerCase"
-          submit3="Convert To Original String"
-          mode={mode}
-          showAlert={showAlert}
-        />
-        <About />
+        <Router>
+          <Routes>
+            <Route path="/about" element={<About />} />
+
+            <Route
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter The Text Here"
+                  submit="Convert To UpperCase"
+                  submit2="Convert To LowerCase"
+                  submit3="Convert To Original String"
+                  mode={mode}
+                  showAlert={showAlert}
+                />
+              }
+            />
+          </Routes>
+        </Router>
       </div>
     </>
   );
