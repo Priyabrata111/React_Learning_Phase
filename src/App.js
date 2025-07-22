@@ -52,7 +52,7 @@ function App() {
 
         <div id="textFormArea">
           <Routes>
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About mode={mode} />} />
 
             <Route
               path="/"

@@ -4,8 +4,10 @@ export default function About(props) {
   return (
     <>
       <div className="hero-unit">
-        <h1>About Me</h1>
-        <p>
+        <h1 className={`text-${props.mode === "dark" ? "light" : "dark"}`}>
+          About Me
+        </h1>
+        <p className={`text-${props.mode === "dark" ? "light" : "dark"}`}>
           Hi, I'm Priyabrata Mondal — a passionate and curious technologist with
           a strong foundation in software development and a growing expertise in
           full-stack web technologies and data-driven solutions. A graduate from
@@ -23,7 +25,13 @@ export default function About(props) {
           together.
         </p>
         <p>
-          <a class="btn btn-primary btn-large">Learn more</a>
+          <a
+            class="btn btn-primary btn-large"
+            target="_blank"
+            href="https://drive.google.com/file/d/1RTDWQJAeFad9aJJBcefKYFJTwUDsnhMB/view?usp=sharing"
+          >
+            Learn more
+          </a>
         </p>
       </div>
     </>
