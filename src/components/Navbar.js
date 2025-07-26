@@ -39,6 +39,13 @@ export default function Navbar(props) {
                 </Link>
               </li>
             </ul>
+            <div className="d-flex">
+              <div
+                className="bg-primary rounded mx-2"
+                onClick={props.toggleMode}
+                style={{ height: "30px", width: "30px" }}
+              ></div>
+            </div>
             <form className="d-flex" role="search">
               <div
                 className={`form-check form-switch text-${
