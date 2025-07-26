@@ -23,7 +23,9 @@ function App() {
       setAlert(null);
     }, 2000);
   };
-  const toggleMode = () => {
+  const toggleMode = (cls) => {
+    console.log(cls);
+    document.body.classList.add("bg-" + cls);
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#004080";
