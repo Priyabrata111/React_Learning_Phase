@@ -31,7 +31,6 @@ function App() {
     document.body.classList.remove("bg-danger");
   };
   const toggleMode = (cls) => {
-    console.log(cls);
     removeBg();
     try {
       document.body.classList.add("bg-" + cls);
